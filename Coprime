@@ -1,0 +1,35 @@
+"""
+The method of remainders is improved version to euclidean algorithm and reduces time complexity.
+It is the most effecient way of calculating GCD of two numbers.
+Given two numbers, If GCD is equal to one they they are said to be Coprime numbers.
+
+Algorithm:
+// Given 'a' and 'b' are two numbers, remainder is equal to a divide by 'b'
+// If remainder is zero, then return 'b'
+// Replace 'a' by 'b' and then 'b' by remainder
+// repeat above steps until remainder is zero
+// If returned value of 'b' is one they the numbers are said to be Coprime numbers
+"""
+
+def coprime_test(): 
+    Continue_lower = 'yes' 
+    while Continue_lower == 'yes':
+        a = int(input('Enter first number: '))   
+        b = int(input('enter second number: '))
+        
+        if (coprime(a,b)== 1):
+            print("The numbers are coprime numbers") 
+        else: print("Numbers are not coprime")
+        Continue = input("To check another pair enter yes. To exit enter exit: ")
+        Continue_lower = Continue.lower()
+        
+def coprime(a,b):
+  while(1):
+    remainder = a % b
+    if(remainder == 0):
+      return b
+    else:
+      a = b
+      b = remainder
+
+
